@@ -6,6 +6,15 @@ import showdown, { Converter } from 'showdown';
 const converter: Converter = new showdown.Converter();
 
 class BlogController {
+    getBlogsList(req: Request, res: Response): any {
+        let files = getMarkdowns( `${ process.cwd() }\\src\\markdowns`);
+        console.log( files );
+
+        files = files.map( (fileName: string )  => kebabCase( removeExtension(fileName) ) );
+
+        res.render("blog-list", { list: files });
+    }
+
     getBlog(req: Request, res: Response): any {
         let blogName: string = req.params.blogName;
 

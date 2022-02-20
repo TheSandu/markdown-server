@@ -5,6 +5,8 @@ const BlogControllerInstance =  new BlogController();
 
 const router = express.Router();
 
+router.get('/', BlogControllerInstance.getBlogsList );
+
 router.get('/:blogName', BlogControllerInstance.getBlog );
 
 export default router;

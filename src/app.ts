@@ -20,6 +20,7 @@ app.use( LogMiddlewareInstance.onLog );
 let ErrorMiddlewareInstance = new ErrorMiddleware();
 app.use( ErrorMiddlewareInstance.onHttpError );
 
+app.use("/", router);
 app.use("/blog", router);
 
 app.listen( process.env.PORT, function () {
