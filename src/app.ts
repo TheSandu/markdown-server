@@ -1,4 +1,4 @@
-import 'dotenv/config';
+// import 'dotenv/config';
 import express, { Application } from 'express';
 
 import LogMiddleware from './middlewares/LogMiddleware';
