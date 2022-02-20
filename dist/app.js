@@ -19,6 +19,7 @@ let ErrorMiddlewareInstance = new ErrorMiddleware_1.default();
 app.use(ErrorMiddlewareInstance.onHttpError);
 app.use("/", BlogRouter_1.default);
 app.use("/blog", BlogRouter_1.default);
-app.listen(process.env.PORT, function () {
-    console.log(`App is listening on port ${process.env.PORT} !`);
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, function () {
+    console.log(`App is listening on port ${PORT} !`);
 });

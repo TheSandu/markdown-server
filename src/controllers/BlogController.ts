@@ -7,8 +7,11 @@ const converter: Converter = new showdown.Converter();
 
 class BlogController {
     getBlogsList(req: Request, res: Response): any {
+
+        console.log( `${ process.cwd() }\\src\\markdowns` );
+        
         let files = getMarkdowns( `${ process.cwd() }\\src\\markdowns`);
-        console.log( files );
+        console.log( `${ process.cwd() }\\src\\markdowns` );
 
         files = files.map( (fileName: string )  => kebabCase( removeExtension(fileName) ) );
 

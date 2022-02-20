@@ -25,6 +25,6 @@ app.use("/blog", router);
 
 
 const PORT = process.env.PORT || 3001;
-app.listen( process.env.PORT, function () {
-    console.log(`App is listening on port ${ process.env.PORT } !`);
+app.listen( PORT, function () {
+    console.log(`App is listening on port ${ PORT } !`);
 });
