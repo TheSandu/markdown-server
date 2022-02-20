@@ -25,7 +25,7 @@ function removeExtension(text) {
 }
 exports.removeExtension = removeExtension;
 function getMarkdownContent(name) {
-    return fs_1.default.readFileSync(`${__dirname}/markdowns/${name}`, { encoding: 'utf8', flag: 'r' });
+    return fs_1.default.readFileSync(`markdowns/${name}`, { encoding: 'utf8', flag: 'r' });
 }
 exports.getMarkdownContent = getMarkdownContent;
 let kebabCase = (text) => text

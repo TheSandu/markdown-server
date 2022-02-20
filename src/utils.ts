@@ -19,7 +19,7 @@ export function removeExtension ( text: string): string {
 }
 
 export function getMarkdownContent( name: string ): string {
-    return fs.readFileSync( `${__dirname}/markdowns/${ name }`, {encoding:'utf8', flag:'r'});
+    return fs.readFileSync( `markdowns/${ name }`, {encoding:'utf8', flag:'r'});
 }
 
 let kebabCase = (text: string) => text
