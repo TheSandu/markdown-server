@@ -8,10 +8,7 @@ const converter: Converter = new showdown.Converter();
 class BlogController {
     getBlogsList(req: Request, res: Response): any {
 
-        console.log( `${ process.cwd() }\\src\\markdowns` );
-
-        let files = getMarkdowns( `${ process.cwd() }\\markdowns`);
-        console.log( `${ process.cwd() }\\src\\markdowns` );
+        let files = getMarkdowns( `markdowns`);
 
         files = files.map( (fileName: string )  => kebabCase( removeExtension(fileName) ) );
 
@@ -21,8 +18,8 @@ class BlogController {
     getBlog(req: Request, res: Response): any {
         let blogName: string = req.params.blogName;
 
-        let files = getMarkdowns( `${ process.cwd() }\\src\\markdowns`);
-    
+        let files = getMarkdowns( `markdowns`);
+
         let fileName: string | undefined = files.find( (fileName: string) => {
             return kebabCase( removeExtension(fileName) ) === blogName;
         });

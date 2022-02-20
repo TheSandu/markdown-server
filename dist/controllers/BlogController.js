@@ -27,15 +27,13 @@ const showdown_1 = __importDefault(require("showdown"));
 const converter = new showdown_1.default.Converter();
 class BlogController {
     getBlogsList(req, res) {
-        console.log(`${process.cwd()}\\src\\markdowns`);
-        let files = (0, utils_1.getMarkdowns)(`${process.cwd()}\\markdowns`);
-        console.log(`${process.cwd()}\\src\\markdowns`);
+        let files = (0, utils_1.getMarkdowns)(`markdowns`);
         files = files.map((fileName) => (0, utils_1.default)((0, utils_1.removeExtension)(fileName)));
         res.render("blog-list", { list: files });
     }
     getBlog(req, res) {
         let blogName = req.params.blogName;
-        let files = (0, utils_1.getMarkdowns)(`${process.cwd()}\\src\\markdowns`);
+        let files = (0, utils_1.getMarkdowns)(`markdowns`);
         let fileName = files.find((fileName) => {
             return (0, utils_1.default)((0, utils_1.removeExtension)(fileName)) === blogName;
         });
