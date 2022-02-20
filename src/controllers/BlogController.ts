@@ -9,8 +9,8 @@ class BlogController {
     getBlogsList(req: Request, res: Response): any {
 
         console.log( `${ process.cwd() }\\src\\markdowns` );
-        
-        let files = getMarkdowns( `${ process.cwd() }\\src\\markdowns`);
+
+        let files = getMarkdowns( `${ process.cwd() }\\markdowns`);
         console.log( `${ process.cwd() }\\src\\markdowns` );
 
         files = files.map( (fileName: string )  => kebabCase( removeExtension(fileName) ) );
